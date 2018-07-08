@@ -11,11 +11,12 @@ Adicionalmente, tambien sirve una pequeña aplicación web SPA que consume el AP
 ## Enpoints
 
 ~~~
-Todos deben contener la cebecera "Content-Type":"application/json".
+Todas las peticiones deben contener la cebecera "Content-Type":"application/json".
+Todos los endpoints responden en JSON.
 ~~~
 ~~~
 Todas las respuesta tiene este formato:
-`
+
 {
   status: int,
   success: bool,
@@ -23,13 +24,15 @@ Todas las respuesta tiene este formato:
   data_type: string,
   data: object || array || null
 }
-`
+~~~
+Esto significa cada parte del JSON:
+
 * status: entero indicando el codigo HTTP correspondiente.
 * success: booleano indicando si la petición se realizó correctamente.
 * message: string con un mensaje del servidor.
 * data_type: string indicando el tipo de dato del campo "data".
 * data: los datos devueltos.
-~~~
+
 Ahora, los enpoints son: 
 
 * Crear
@@ -76,4 +79,3 @@ Ahora, los enpoints son:
     * response:
         * En "data_type": "null"
         * En "data": null
-~~~
